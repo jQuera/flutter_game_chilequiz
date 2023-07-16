@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ErrorPage extends StatelessWidget {
   const ErrorPage({super.key});
@@ -6,11 +7,19 @@ class ErrorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Error Page'),
-      ),
       body: Center(
-        child: Text('Ha ocurrido un error'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Ha ocurrido un error'),
+            ElevatedButton(
+              onPressed: () {
+                context.pop();
+              },
+              child: Text('Volver'),
+            ),
+          ],
+        ),
       ),
     );
   }
